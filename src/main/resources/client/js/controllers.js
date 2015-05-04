@@ -7,7 +7,7 @@ var cfmControllers = angular.module('cfmControllers', []);
 cfmControllers.controller('MainCtrl', function($scope) {
   $scope.config = function() {
 	  $scope.npockets = 7;
-	  $scope.pockName = ["cash1", "cash2", "cash3", "acc1", "acc2", "card limit", "card max"];
+	  $scope.pockName = ["cash1", "cash2", "cash3", "acc1", "acc2", "card limit", "(-) card max"];
 	  $scope.cashType = [0, 1, 2, 3, 4];
 	  $scope.cardType = [5, 6];
 	  $scope.allType = $scope.cashType.concat($scope.cardType);
