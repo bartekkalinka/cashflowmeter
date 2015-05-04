@@ -1,0 +1,25 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "cashflowmeter",
+  "description": "a home budget daily limit calculator",
+  "devDependencies": {
+    "karma": "^0.12.16",
+    "karma-chrome-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5",
+    "protractor": "~1.0.0"    
+  },
+  "scripts": {
+    "prestart": "npm install",
+
+    "pretest": "npm install",
+    "test": "node node_modules/karma/bin/karma start src/test/js/unit/karma.conf.js",
+    "test-single-run": "node node_modules/karma/bin/karma start src/test/js/unit/karma.conf.js  --single-run",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor src/test/js/e2e/protractor-conf.js"
+  }
+}

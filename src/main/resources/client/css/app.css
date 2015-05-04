@@ -1,0 +1,52 @@
+/* app css stylesheet */
+
+.readonly {
+  background-color: #cccccc;
+  padding: 2px;
+}
+
+.break {
+  padding: 2px;
+}
+
+.day {
+  border-style: solid;
+  border-color: #009696;
+  border-radius: 6px;
+}
+
+body {
+  padding-top: 20px;
+}
+
+label {
+	font-weight: normal;
+}
+
+input, label {
+    display:block;
+}
+
+input[type="number"], .myfont {
+  font-size: 150%;
+}
+
+input[type="number"] {
+  padding: 2px;
+  border: solid 2px #009696;
+  transition: border 0.3s;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  width: 140px;
+}
+input[type="number"]:focus,
+input[type="number"].focus {
+  border: solid 2px #000000;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

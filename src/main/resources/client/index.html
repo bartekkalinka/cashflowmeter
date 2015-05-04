@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cfmApp">
+<head>
+  <meta charset="utf-8">
+  <title>cashflowmeter</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>  
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <div class="container">
+    <div ng-repeat="i in getNumber(ndays) track by $index">
+      <div class="row day">
+        <div class="col-md-12">
+          <div class="row readonly">
+            <div class="col-md-2 col-md-offset-4"><label>bal prev</label><input type="number" id="balPrev" class="readonly" readonly value="{{balancePrev($index)}}" title="balance prev"></div>
+            <div class="col-md-2 col-md-offset-2"><label>limit prev</label><input type="number" id="limitPrev" class="readonly" readonly value="{{limitPrev($index)}}" title="limit prev"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"><label>{{pockName[0]}}</label><input id="0" type="number" ng-model="day[$index].pockets[0]" title="{{pockName[0]}}"></div>
+            <div class="col-md-2"><label>{{pockName[1]}}</label><input id="1" type="number" ng-model="day[$index].pockets[1]" title="{{pockName[1]}}"></div>
+            <div class="col-md-2"><label>{{pockName[2]}}</label><input id="2" type="number" ng-model="day[$index].pockets[2]" title="{{pockName[2]}}"></div>
+            <div class="col-md-2"><label>{{pockName[3]}}</label><input id="3" type="number" ng-model="day[$index].pockets[3]" title="{{pockName[3]}}"></div>
+            <div class="col-md-2"><label>{{pockName[4]}}</label><input id="4" type="number" ng-model="day[$index].pockets[4]" title="{{pockName[4]}}"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-2"><label>{{pockName[5]}}</label><input id="5" type="number" ng-model="day[$index].pockets[5]" title="{{pockName[5]}}"></div>
+            <div class="col-md-2"><label>{{pockName[6]}}</label><input id="6" type="number" ng-model="day[$index].pockets[6]" title="{{pockName[6]}}"></div>
+          </div>
+          <div class="row readonly">
+            <div class="col-md-2"><label>cash/acc bal.</label><input id="cashbal" class="readonly" readonly type="number" value="{{typeSum(day[$index].pockets, cashType)}}"></div>
+            <div class="col-md-2"><label>card bal.</label><input id="cardbal" class="readonly" readonly type="number" value="{{typeSum(day[$index].pockets, cardType)}}"></div>
+            <div class="col-md-2"><label>balance</label><input id="total" class="readonly" readonly type="number" value="{{balance($index)}}"></div>
+            <div class="col-md-2 col-md-offset-2"><label>limit</label><input id="limit" class="readonly" readonly type="number" value="{{limit($index)}}"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row break"/>
+    </div>
+  </div>
+</body>
+</html>
