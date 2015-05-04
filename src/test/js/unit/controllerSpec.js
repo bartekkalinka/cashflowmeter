@@ -17,10 +17,10 @@ describe('cashflowmeter controllers', function() {
       scope.limitInit = 220;
       scope.balanceInit = 384;
       scope.npockets = 2;
-      scope.ndays = 2;
-      scope.day = [];
-      scope.day[0] = {};
+      scope.ndays = 0;
+      scope.addDay();
       scope.day[0].pockets = [234, 123];
+      scope.addDay();
     };
 
     it('should calculate sum for each type of pockets', function() {
@@ -52,9 +52,17 @@ describe('cashflowmeter controllers', function() {
       expect(scope.limitPrev(1)).toBe(193);
     });
 
+    it('should add days', function() {
+      myConfig();
+      scope.addDay();
+      expect(scope.ndays).toBe(3);
+    });
+
     it('should configure pockets', function() {
       expect(scope.npockets).toBeGreaterThan(0);
       expect(scope.allType.length).toBe(scope.npockets);
     });
+
+
   });
 });

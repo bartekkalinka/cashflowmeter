@@ -14,19 +14,12 @@ cfmControllers.controller('MainCtrl', function($scope) {
   }
 
   $scope.init = function() {
-    $scope.ndays = 2;
+    $scope.ndays = 0;
     $scope.day = [];
     $scope.balanceInit = 3100;
     $scope.limitInit = 500;
-    var i;
-    for(i = 0; i < $scope.ndays; i++) {
-      $scope.day[i] = {};
-      $scope.day[i].pockets = [];
-    }
+    $scope.addDay();
   }
-
-  $scope.config();
-  $scope.init();
 
   $scope.getNumber = function(num) {
     return new Array(num);   
@@ -63,5 +56,13 @@ cfmControllers.controller('MainCtrl', function($scope) {
       return $scope.limitInit;
     }
   }
+
+  $scope.addDay = function() {
+    $scope.day[$scope.ndays] = {};
+    $scope.day[$scope.ndays].pockets = [];
+    $scope.ndays++;
+  }
   
+  $scope.config();
+  $scope.init();
 });
